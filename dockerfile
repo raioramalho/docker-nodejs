@@ -3,7 +3,7 @@ FROM ubuntu:latest
 
 # Atualize os repositórios e instale Node.js, npm, bash e git
 RUN apt-get update && \
-    apt-get install -y nodejs npm bash git && \
+    apt-get install -y nodejs npm git && \
     ln -s /usr/bin/nodejs /usr/bin/node
 
 # Verifique a versão do Node.js e npm
