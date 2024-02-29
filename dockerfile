@@ -2,8 +2,8 @@
 FROM node:latest
 
 # Instale bash e git
-RUN apt-get update && \
-    apt-get install -y bash git
+RUN apk update && \
+    apk add --no-cache bash git
 
 # Defina o diretório de trabalho dentro do contêiner
 WORKDIR /usr/src/app
