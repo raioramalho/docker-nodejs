@@ -1,9 +1,13 @@
-# Use uma imagem base do Alpine Linux com Node.js pré-instalado
-FROM node:alpine
+# Use uma imagem base do Ubuntu
+FROM ubuntu:latest
 
-# Instale bash e git
-RUN apk update && \
-    apk add --no-cache bash git
+# Atualize os repositórios e instale Node.js, npm, bash e git
+RUN apt-get update && \
+    apt-get install -y nodejs npm bash git && \
+    ln -s /usr/bin/nodejs /usr/bin/node
+
+# Verifique a versão do Node.js e npm
+RUN node -v && npm -v
 
 # Defina o diretório de trabalho dentro do contêiner
 WORKDIR /usr/src/app
