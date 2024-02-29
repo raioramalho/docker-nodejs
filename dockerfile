@@ -1,6 +1,10 @@
 # Use uma imagem base do Node.js
 FROM node:latest
 
+# Instale bash e git
+RUN apt-get update && \
+    apt-get install -y bash git
+
 # Defina o diretório de trabalho dentro do contêiner
 WORKDIR /usr/src/app
 
@@ -18,4 +22,3 @@ EXPOSE 3000
 
 # Comando para iniciar a aplicação
 CMD ["node", "app.js"]
-
