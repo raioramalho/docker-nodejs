@@ -1,5 +1,5 @@
-# Use uma imagem base do Node.js
-FROM node:latest
+# Use uma imagem base do Alpine Linux com Node.js pré-instalado
+FROM node:alpine
 
 # Instale bash e git
 RUN apk update && \
